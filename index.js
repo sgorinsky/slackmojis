@@ -73,7 +73,7 @@ function DownloadImages(list) {
   return Promise.map(
     list,
     async ({ id, name, image_url, category }) => {
-      const filename = `${id}_${parseFilename(image_url)}`
+      const filename = `${parseFilename(image_url)}`
 
       await downloadFileRetry(filename, image_url);
 
